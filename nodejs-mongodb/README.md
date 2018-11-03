@@ -1,10 +1,12 @@
 Ru Application instructions:
 
 - you need nodejs & npm
-- run 'npm install -g nodemon' using your terminal
-- run 'npm install' using your terminal in the project directory
-- run 'nodemon ./app.js' using your terminal in the project directory
-- ther server is now running under 'localhost:8080'
+
+- in your terminal:
+    - run 'npm install -g nodemon' using your terminal
+    - run 'npm install' in the project directory (nodejs-mongodb)
+    - run 'nodemon ./app.js' in the project directory (nodejs-mongodb)
+    - ther server is now running under 'localhost:8080'
 - requests:
     - containers
         - getAll:       localhost:8080/containers
