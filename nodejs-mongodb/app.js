@@ -8,7 +8,7 @@ const app = express();
 
 // Set up mongoose connection
 const mongoose = require('mongoose');
-let dbUrl = 'mongodb://admin:admin123@ds251223.mlab.com:51223/containers';
+let dbUrl = 'mongodb://admin:JBNYtaIi46Ev7K5w@ds151533.mlab.com:51533/proof-of-delivery';
 const mongoDB = process.env.MONGODB_URI || dbUrl;
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;
