@@ -17,6 +17,9 @@ Ru Application instructions:
     - users
         - getAll:        (get):         localhost:8080/users
         - register:      (post):        localhost:8080/users/register
+        - getLSPs:       (post):        localhost:8080/users/lsps
+        - getDrivers:    (post):        localhost:8080/users/drivers
+        - getReceivers:  (post):        localhost:8080/users/recievers
         - login:         (post):        localhost:8080/login
         - getUserById:   (get):         localhost:8080/users/<USER_ID>
         - update:        (put):         localhost:8080/users/<USER_ID>/update

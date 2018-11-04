@@ -70,16 +70,73 @@ exports.getUserById = function (req, res) {
             return res.send(err);
         }
         return res.send(user);
-    })
+    });
+};
+
+// get all LSPs
+exports.getLSPs = function (req, res) {
+    User.findById(req.session.userId, function (err, user) {
+        if (err) {
+            return res.send(err);
+        } else {
+            if (user.role === 'LSP') {
+                User.find({role: 'LSP'}, function(err, LSPs) {
+                    return res.send(LSPs);
+                });
+            } else {
+                return res.send('You are not allowed to execute this action!');
+            }
+        }
+    });
+};
+
+// get all drivers
+exports.getDrivers = function (req, res) {
+    User.findById(req.session.userId, function (err, user) {
+        if (err) {
+            return res.send(err);
+        } else {
+            if (user.role === 'LSP') {
+                User.find({role: 'Driver'}, function(err, LSPs) {
+                    return res.send(LSPs);
+                });
+            } else {
+                return res.send('You are not allowed to execute this action!');
+            }
+        }
+    });
+};
+
+// get all recievers
+exports.getRecievers = function (req, res) {
+    User.findById(req.session.userId, function (err, user) {
+        if (err) {
+            return res.send(err);
+        } else {
+            if (user.role === 'LSP') {
+                User.find({role: 'Reciever'}, function(err, LSPs) {
+                    return res.send(LSPs);
+                });
+            } else {
+                return res.send('You are not allowed to execute this action!');
+            }
+        }
+    });
 };
 
 // update user
 exports.updateUser = function (req, res) {
-    User.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, user) {
+    bcrypt.hash(req.body.password, 10, function (err, hash){
         if (err) {
-            return res.send(err);
+          return next(err);
         }
-        return res.send('User updated successfully!');
+        req.body.password = hash;
+        User.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, user) {
+            if (err) {
+                return res.send(err);
+            }
+            return res.send('User updated successfully!');
+        });
     });
 };
 
