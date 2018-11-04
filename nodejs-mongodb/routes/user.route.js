@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-function requiresLogin(req, res, next) {
+function requireLogin(req, res, next) {
     if (req.session && req.session.userId) {
       return next();
     } else {
@@ -15,12 +15,12 @@ function requiresLogin(req, res, next) {
 const userController = require('../controllers/user.controller');
 
 // user routes
-router.get('/users', requiresLogin, userController.getAll);
-router.post('/users/register', userController.registerUser);
+router.get('/users', requireLogin, userController.getAll);
+router.post('/users/register', requireLogin, userController.registerUser);
 router.post('/login', userController.authenticateUser);
-router.get('/users/:id', userController.getUserById);
-router.put('/users/:id/update', userController.updateUser);
-router.delete('/users/:id/delete', userController.deleteUser);
+router.get('/users/:id', requireLogin, userController.getUserById);
+router.put('/users/:id/update', requireLogin, userController.updateUser);
+router.delete('/users/:id/delete', requireLogin, userController.deleteUser);
 router.get('/logout', userController.logout);
 
 module.exports = router;
