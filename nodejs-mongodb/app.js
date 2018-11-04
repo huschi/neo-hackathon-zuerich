@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-// Imports routes for the containers
-const container = require('./routes/container.route');
+// Imports routes for the assets & users
+const asset = require('./routes/asset.route');
 const user = require('./routes/user.route');
 const app = express();
 
@@ -18,7 +18,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 // body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/containers', container);
+app.use('/assets', asset);
 app.use('/users', user);
 
 let port = 8080;

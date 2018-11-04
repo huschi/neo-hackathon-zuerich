@@ -4,7 +4,7 @@ const User = require('../models/user.model');
 exports.getAll = function (req, res) {
     User.find({}, function(err, users) {
         if (err) {
-            return next(err);
+            res.send(err);
         }
         res.send(users);
     });
@@ -16,7 +16,7 @@ exports.createUser = function (req, res) {
         {
             name: req.body.name,
             email: req.body.email,
-            passsword: req.body.passsword,
+            password: req.body.password,
             publicKey: req.body.publicKey,
             role: req.body.role
         }
@@ -24,9 +24,9 @@ exports.createUser = function (req, res) {
 
     user.save(function (err) {
         if (err) {
-            return next(err);
+            res.send(err);
         }
-        res.send('User Created successfully')
+        res.send('User created successfully!')
     })
 };
 
@@ -34,7 +34,7 @@ exports.createUser = function (req, res) {
 exports.getUser = function (req, res) {
     User.findById(req.params.id, function (err, user) {
         if (err) {
-            return next(err);
+            res.send(err);
         }
         res.send(user);
     })
@@ -44,9 +44,9 @@ exports.getUser = function (req, res) {
 exports.updateUser = function (req, res) {
     User.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, user) {
         if (err) {
-            return next(err);
+            res.send(err);
         }
-        res.send('User udpated.');
+        res.send('User updated successfully!');
     });
 };
 
@@ -54,7 +54,7 @@ exports.updateUser = function (req, res) {
 exports.deleteUser = function (req, res) {
     User.findByIdAndRemove(req.params.id, function (err) {
         if (err) {
-            return next(err);
+            res.send(err);
         }
         res.send('User deleted successfully!');
     })

@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const Role = {
-    ADMIN:   'admin',
-    DRIVER:  'driver',
-    SENDER:   'sender',
-    RECEIVER: 'receiver'
+    LSP:   'LSP',
+    DRIVER:  'Driver',
+    RECEIVER: 'Receiver'
 };
 
 let UserSchema = new Schema({

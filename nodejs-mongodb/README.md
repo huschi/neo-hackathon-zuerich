@@ -8,12 +8,12 @@ Ru Application instructions:
     - run 'nodemon ./app.js' in the project directory (nodejs-mongodb)
     - ther server is now running under 'localhost:8080'
 - requests:
-    - containers
-        - getAll:       localhost:8080/containers
-        - create:       localhost:8080/containers/create
-        - getSingle:    localhost:8080/containers/<CONTAINER_ID>
-        - update:       localhost:8080/containers/<CONTAINER_ID>/update
-        - delete:       localhost:8080/containers/<CONTAINER_ID>/delete
+    - assets
+        - getAll:       localhost:8080/assets
+        - create:       localhost:8080/assets/create
+        - getSingle:    localhost:8080/assets/<ASSET_ID>
+        - update:       localhost:8080/assets/<ASSET_ID>/update
+        - delete:       localhost:8080/assets/<ASSET_ID>/delete
     - users
         - getAll:       localhost:8080/users
         - create:       localhost:8080/users/create
