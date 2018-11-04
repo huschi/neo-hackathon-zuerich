@@ -30,11 +30,11 @@ exports.registerUser = function (req, res) {
                 if (user) {
                     return res.send('The email address you have entered is already associated with another account.');
                 }
-                newUser.save(user, function (err) {
+                newUser.save(function (err) {
                     if (err) {
                         return res.send(err);
                     }
-                    return res.send('User created successfully!')
+                    return res.send('User created successfully!');
                 });
         });
     } else {
