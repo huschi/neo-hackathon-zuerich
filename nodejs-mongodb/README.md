@@ -14,9 +14,9 @@ Ru Application instructions:
         - getSingle:    localhost:8080/containers/<CONTAINER_ID>
         - update:       localhost:8080/containers/<CONTAINER_ID>/update
         - delete:       localhost:8080/containers/<CONTAINER_ID>/delete
-    - persons
-        - getAll:       localhost:8080/persons
-        - create:       localhost:8080/persons/create
-        - getSingle:    localhost:8080/persons/<PERSON_ID>
-        - update:       localhost:8080/persons/<PERSON_ID>/update
-        - delete:       localhost:8080/persons/<PERSON_ID>/delete
+    - users
+        - getAll:       localhost:8080/users
+        - create:       localhost:8080/users/create
+        - getSingle:    localhost:8080/users/<USER_ID>
+        - update:       localhost:8080/users/<USER_ID>/update
+        - delete:       localhost:8080/users/<USER_ID>/delete
