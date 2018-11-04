@@ -5,10 +5,10 @@ const router = express.Router();
 const assetController = require('../controllers/asset.controller');
 
 // asset routes
-router.get('', assetController.getAll);
-router.post('/create', assetController.createAsset);
-router.get('/:id', assetController.getAsset);
-router.put('/:id/update', assetController.updateAsset);
-router.delete('/:id/delete', assetController.deleteAsset);
+router.get('/assets', assetController.getAll);
+router.post('/assets/create', assetController.createAsset);
+router.get('/assets/:id', assetController.getAsset);
+router.put('/assets/:id/update', assetController.updateAsset);
+router.delete('/assets/:id/delete', assetController.deleteAsset);
 
 module.exports = router;
