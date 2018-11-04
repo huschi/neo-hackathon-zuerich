@@ -9,14 +9,17 @@ Ru Application instructions:
     - ther server is now running under 'localhost:8080'
 - requests:
     - assets
-        - getAll:       localhost:8080/assets
-        - create:       localhost:8080/assets/create
-        - getSingle:    localhost:8080/assets/<ASSET_ID>
-        - update:       localhost:8080/assets/<ASSET_ID>/update
-        - delete:       localhost:8080/assets/<ASSET_ID>/delete
+        - getAll:       (get):          localhost:8080/assets
+        - create:       (post):         localhost:8080/assets/create
+        - getSingle:    (get):          localhost:8080/assets/<ASSET_ID>
+        - update:       (put):          localhost:8080/assets/<ASSET_ID>/update
+        - delete:       (delete):       localhost:8080/assets/<ASSET_ID>/delete
     - users
         - getAll:        (get):         localhost:8080/users
         - register:      (post):        localhost:8080/users/register
+        - getLSPs:       (post):        localhost:8080/users/lsps
+        - getDrivers:    (post):        localhost:8080/users/drivers
+        - getReceivers:  (post):        localhost:8080/users/recievers
         - login:         (post):        localhost:8080/login
         - getUserById:   (get):         localhost:8080/users/<USER_ID>
         - update:        (put):         localhost:8080/users/<USER_ID>/update
